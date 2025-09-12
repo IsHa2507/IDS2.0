@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Herosection.css";
 
+
 export default function HeroSection() {
   return (
     <section className="hero-section">

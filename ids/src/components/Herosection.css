@@ -1,0 +1,159 @@
+.hero-section {
+  position: relative;
+  background: #ffefe6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.top-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  padding: 4px 16px;
+
+  width: fit-content;
+  margin-bottom: 1.5rem;
+}
+
+.tag-new {
+  background: #facc15;
+  color: black;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 50px;
+  
+}
+
+.top-banner p {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.arrow {
+  color: #555;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero-left {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #1e40af;
+}
+
+.btn-outline {
+  border: 2px solid #f97316;
+  background: transparent;
+  color: black;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #fff7ed;
+}
+
+.hero-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.circle-bg {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(to right, #fb923c, #fde047);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  width: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .circle-bg {
+    width: 400px;
+    height: 400px;
+  }
+  .hero-image {
+    width: 300px;
+  }
+}
+
+.hero-arrow {
+  position: absolute;
+  bottom: 5rem;
+  left: 2.5rem;
+}
+
+.arrow-svg {
+  width: 48px;
+  height: 48px;
+  transform: rotate(12deg);
+}
