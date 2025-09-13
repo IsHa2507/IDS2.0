@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import { FiShoppingCart } from "react-icons/fi"; // ✅ Proper cart icon
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [cartCount, setCartCount] = useState(0); // default as zero
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -13,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
-        
+
         {/* Logo */}
         <div className="navbar-logo">
           <div className="logo-circle">
@@ -29,18 +31,24 @@ export default function Navbar() {
           <li>About</li>
           <li>Blog</li>
           <li>Contact</li>
-          <li>Pages </li>
+          <li>Pages</li>
         </ul>
 
         {/* Right Buttons */}
         <div className="navbar-right">
           <button className="btn-outline">let’s talk</button>
-          <div className="cart-icon">
-            <span className="material-icons">shopping_cart</span>
-            <span className="cart-badge">0</span>
-          </div>
-        </div>
 
+          {/* Shopping Cart */}
+          <div className="cart-icon">
+            <FiShoppingCart className="cart-svg" />
+            <span className="cart-badge">{cartCount}</span>
+          </div>
+
+          {/* 
+            👉 In future, you can link this:
+            setCartCount(cartCount + 1) whenever an item is added
+          */}
+        </div>
       </div>
     </nav>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Herosection.css";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function HeroSection() {
   return (
@@ -9,7 +10,7 @@ export default function HeroSection() {
         <div className="top-banner">
           <span className="tag-new">New</span>
           <p>Check our new premium Webflow Templates Azwedo</p>
-          <span className="arrow">➜</span>
+          <FiArrowRight className="arrow-icon"/>
         </div>
 
         {/* Main Content */}
@@ -29,17 +30,25 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Image */}
+         {/* Right Content with Rings */}
           <div className="hero-right">
-            <div className="circle-pattern"></div>
+            <div className="rings-container">
+              <div className="ring"></div>
+              <div className="ring"></div>
+              <div className="ring"></div>
+              <div className="ring"></div>
+              <div className="ring"></div>
+              <div className="ring"></div>
+            </div>
             <img
-              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+              src="#"
               alt="Happy student"
               className="hero-image"
             />
           </div>
         </div>
       </div>
+        
     </section>
   );
 }
