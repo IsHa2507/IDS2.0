@@ -1,8 +1,10 @@
 .cambridge-section {
   background: #fefaf7;
-  padding: 4rem 1rem;
+  padding: 5rem 1rem;
   display: flex;
   justify-content: center;
+  /* margin-top: -10px; */
+  
 }
 
 .cambridge-wrapper {
@@ -19,6 +21,52 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+/* Trusted Logos Section */
+/* Trusted Logos Section */
+.trusted-section {
+  width: 100%;
+  background: #fdfaf7;
+  text-align: center;
+  padding: 50px 0;
+  padding-bottom: 100px;
+}
+
+.trusted-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f45d22;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.trusted-logos {
+  display: flex;
+  justify-content: space-around; /* spread logos evenly */
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center; /* align icon + text on same line */
+  gap: 10px; /* spacing between icon and text */
+  font-size: 24px;
+  font-weight: 500;
+  color: #444;
+  transition: transform 0.3s ease, color 0.3s ease;
+  min-width: 150px; /* keeps all logo items aligned */
+  justify-content: center; /* centers icon + text pair */
+}
+
+.logo-item:hover {
+  transform: scale(1.05);
+  color: #f45d22;
+}
+
 
 /* Left side (Images + Circles) */
 .cambridge-left {
@@ -27,57 +75,93 @@
   justify-content: center;
   align-items: center;
 }
-
-.circle-rings {
+/* Rings Container */
+.rings-container2 {
   position: absolute;
-  width: 450px;
-  height: 450px;
-  border-radius: 50%;
-  background: radial-gradient(circle, transparent 95%, #f97316 96%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: 580px;
+  height: 580px;
+  transform: translate(-50%, -50%);
+  z-index: 0; /* behind images */
 }
 
-/* You can also use multiple concentric circles with pseudo elements */
-.circle-rings::before,
-.circle-rings::after {
-  content: "";
+/* Each ring */
+.ringd {
   position: absolute;
-  border: 1px solid #fbbf24;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fca311;
   border-radius: 50%;
-  opacity: 0.3;
 }
 
-.circle-rings::before {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+/* 3 different sizes */
+.ringd:nth-child(1) {
+  width: 500px;
+  height: 500px;
+  opacity: 0.2;
+}
+.ringd:nth-child(2) {
+  width: 350px;
+  height: 350px;
+  opacity: 0.4;
+}
+.ringd:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  opacity: 0.6;
 }
 
-.circle-rings::after {
-  width: 70%;
-  height: 70%;
-  top: 15%;
-  left: 15%;
-}
-
+/* Base Card */
 .image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  z-index: 1;
+  position: relative;
+  width: 380px;   /* container size */
+  height: 380px;
+  margin: 0 auto;
 }
 
+/* Base Card */
 .image-card {
-  border-radius: 12px;
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* Student 1 - Top Left */
+.image-card:nth-child(1) {
+  top: -30px;
+  left: 40px;
+  background: #fde68a; /* yellow */
+  z-index: 1;
+}
+
+/* Student 2 - Center Overlap */
+.image-card:nth-child(2) {
+  top: 120px;
+  left: 200px;
+  background: #e9d5ff; /* purple */
+  z-index: 3;
+}
+
+/* Student 3 - Bottom Left */
+.image-card:nth-child(3) {
+  bottom: -80px;
+  left: 40px;
+  background: #bfdbfe; /* blue */
+  z-index: 4;
 }
 
 .image-card img {
@@ -85,6 +169,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
 .yellow {
   background: #fde68a;
@@ -108,7 +193,7 @@
 }
 
 .heading {
-  font-size: 1.75rem;
+  font-size: 36px;
   font-weight: 700;
   margin: 0.25rem 0;
 }

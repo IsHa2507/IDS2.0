@@ -1,0 +1,169 @@
+/* Section Base */
+.courses-section {
+  background: #fefaf7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.courses-header h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ef4444;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.courses-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.courses-header p {
+  font-size: 16px;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.courses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.flip-card {
+  perspective: 1000px;
+  height: 420px; /* FIXED consistent height */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.card-img-container {
+  height: 200px; /* Fixed height for all images */
+  overflow: hidden;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevent stretching */
+  transition: transform 0.3s ease;
+}
+
+.flip-card-front:hover .card-img-container img {
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+.card-content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+  text-align: left;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star-icon {
+  color: #f59e0b; /* Amber color for stars */
+}
+
+/* Back */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: #fff7ed;
+  padding: 20px;
+  justify-content: center;
+}
+
+.flip-card-back .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flip-card-back .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f97316;
+  text-transform: uppercase;
+}
+
+.flip-card-back p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+}
+
+.flip-card-back hr {
+  border: none;
+  border-top: 1px solid #fdba74;
+  margin: 12px 0;
+}
+
+.flip-card-back .price {
+  font-size: 16px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+
+.price-icon {
+  font-size: 18px;
+  color: #f97316;
+}
