@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import HeroSection from "./Herosection";
 import Detail from "./detail"; 
 import Courses from "./Courses";
+import Benefits from "./Benefits";
+import Footer from "./Footer";
 
 export default function LandingPage(){
     return(
@@ -10,7 +12,9 @@ export default function LandingPage(){
         <Navbar/>
         <HeroSection/>
         <Detail/>
+        <Benefits/>
         <Courses/>
+        <Footer/>
         </>
     );
 }
