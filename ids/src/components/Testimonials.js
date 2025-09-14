@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Testimonials.css";
 
 const testimonials = [
@@ -26,9 +26,32 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const containerTop = containerRef.current.getBoundingClientRect().top;
+      const scrollHeight = window.innerHeight;
+
+      // progress of scroll relative to container
+      const progress = Math.min(
+        Math.max((scrollHeight - containerTop) / scrollHeight, 0),
+        1.8 // small buffer to switch through all 3
+      );
+
+      if (progress < 0.6) setActiveIndex(0);
+      else if (progress < 1.2) setActiveIndex(1);
+      else setActiveIndex(2);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="testimonial-section">
-      {/* Left Fixed Text */}
+    <section className="testimonial-section" ref={containerRef}>
+      {/* Left Side - Stays Sticky */}
       <div className="testimonial-left">
         <p className="tag">TESTIMONIALS</p>
         <h2>Real Voices <br /> Real Experiences</h2>
@@ -38,10 +61,14 @@ export default function Testimonials() {
         </p>
       </div>
 
-      {/* Right Scrollable Cards */}
+      {/* Right Side - Pinned Box */}
       <div className="testimonial-right">
-        {testimonials.map((t, index) => (
-          <div key={index} className="testimonial-card" style={{ background: t.bg }}>
+        {testimonials.map((t, i) => (
+          <div
+            key={i}
+            className={`testimonial-card ${activeIndex === i ? "active" : ""}`}
+            style={{ background: t.bg }}
+          >
             <img src={t.img} alt={t.name} className="testimonial-img" />
             <p className="testimonial-text">"{t.text}"</p>
             <h4>{t.name}</h4>
