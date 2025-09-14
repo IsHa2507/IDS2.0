@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { FiShoppingCart } from "react-icons/fi"; // ✅ Proper cart icon
 
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [cartCount, setCartCount] = useState(0); // default as zero
@@ -13,8 +14,11 @@ export default function Navbar() {
   }, []);
 
   return (
+    <>
+ 
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
+        
 
         {/* Logo */}
         <div className="navbar-logo">
@@ -51,5 +55,6 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+     </>
   );
 }

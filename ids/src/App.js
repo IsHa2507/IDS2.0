@@ -7,6 +7,7 @@ import Detail from './components/detail';
 import Courses  from './components/Courses';
 import Benefits from './components/Benefits';
 import Footer from './components/Footer';
+import WorkStrip from './components/WorkStrip';
 function App() {
   return (
    <>

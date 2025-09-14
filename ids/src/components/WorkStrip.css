@@ -1,0 +1,10 @@
+.work-strip {
+  background: #fff200;   /* orange strip */
+  color: #000000;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 0;
+  letter-spacing: 1px;
+  
+}
