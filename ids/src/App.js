@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import WorkStrip from './components/WorkStrip';
 import Blog from './components/Blog';
 import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQs';
 function App() {
   return (
    <>
