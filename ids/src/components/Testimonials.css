@@ -1,0 +1,82 @@
+.testimonial-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 8%;
+  min-height: 200vh; /* to allow scrolling effect */
+}
+
+.testimonial-left {
+  position: sticky;
+  top: 100px;
+  flex: 1;
+  max-width: 40%;
+}
+
+.testimonial-left .tag {
+  color: #ff5722;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.testimonial-left h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.testimonial-left p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.testimonial-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.testimonial-card {
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  position: relative;
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card:nth-child(2) {
+  margin-top: 200px; /* so it stacks after scroll */
+}
+
+.testimonial-card:nth-child(3) {
+  margin-top: 200px;
+}
+
+.testimonial-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+h4 {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+}
+
+span {
+  color: #555;
+  font-size: 0.9rem;
+}

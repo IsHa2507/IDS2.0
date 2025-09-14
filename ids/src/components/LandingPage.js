@@ -6,6 +6,8 @@ import Courses from "./Courses";
 import Benefits from "./Benefits";
 import Footer from "./Footer";
 import WorkStripe from "./WorkStrip";
+import Blog from "./Blog";
+import Testimonials from "./Testimonials";
 
 export default function LandingPage(){
     return(
@@ -16,6 +18,8 @@ export default function LandingPage(){
         <Detail/>
         <Benefits/>
         <Courses/>
+        <Blog/>
+        <Testimonials/>
         <Footer/>
         </>
     );

@@ -8,6 +8,8 @@ import Courses  from './components/Courses';
 import Benefits from './components/Benefits';
 import Footer from './components/Footer';
 import WorkStrip from './components/WorkStrip';
+import Blog from './components/Blog';
+import Testimonials from './components/Testimonials';
 function App() {
   return (
    <>
