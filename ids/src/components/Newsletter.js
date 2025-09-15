@@ -36,7 +36,7 @@ export default function Newsletter() {
               src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=500"
               alt="student"
             />
-            <div className="badge">2700+ <span>Students</span></div>
+           
           </div>
 
           {/* Student 2 */}
@@ -45,20 +45,20 @@ export default function Newsletter() {
               src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500"
               alt="mentor"
             />
-            <div className="badge">110+ <span>Mentors</span></div>
+            
           </div>
           {/* 🔥 Floating Tags */}
-          <div className="tag-badge badge-top-left">
+          <div className="tag-badgen badgen-top-left">
             <strong>2700+</strong>
             <span>Students Community</span>
           </div>
 
-          <div className="tag-badge badge-top-right">
+          <div className="tag-badgen badgen-top-right">
             <strong>240+</strong>
             <span>Online Courses</span>
           </div>
 
-          <div className="tag-badge badge-bottom-left">
+          <div className="tag-badgen badgen-bottom-left">
             <strong>110+</strong>
             <span>Mentors & Teachers</span>
           </div>
