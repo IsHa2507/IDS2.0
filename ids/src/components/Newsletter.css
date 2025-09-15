@@ -1,0 +1,251 @@
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 10%;   /* increased top/bottom */
+  background: #fefaf8;
+  position: relative;
+  overflow: visible;   /* 🔥 allow rings to overflow */
+}
+
+
+.newsletter-left {
+  flex: 1;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.newsletter-left h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.newsletter-left p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.newsletter-form {
+  display: flex;
+  background: #fff;
+  border: 1px solid #f2d6c9;
+  border-radius: 50px;
+  overflow: hidden;
+  max-width: 400px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.newsletter-form button {
+  background: #264de4;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #1939a9;
+}
+
+/* RIGHT SIDE */
+.newsletter-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* RINGS */
+.rings-container {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  width: 550px;
+  height: 550px;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none; /* rings won't block form clicks */
+}
+
+.ringn {
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fca311;
+  border-radius: 50%;
+  animation: fadePulse 6s infinite ease-in-out;
+}
+
+/* Sizes */
+.ringn:nth-child(1) {
+  width: 450px;
+  height: 450px;
+  animation-delay: 0s;
+}
+.ringn:nth-child(2) {
+  width: 350px;
+  height: 350px;
+  animation-delay: 1s;
+}
+.ringn:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  animation-delay: 2s;
+}
+
+/* Keyframes */
+@keyframes fadePulse {
+  0% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.05); }
+  100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Image Grid */
+.image-grid {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.image-card {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* Placement */
+.image-card:nth-child(1) {
+  top: -30px;
+  left: 100px;
+  background: #fde68a;
+  z-index: 1;
+}
+.image-card:nth-child(2) {
+  top: 150px;
+  left: 230px;
+  background: #e9d5ff;
+  z-index: 3;
+}
+
+
+/* BADGES */
+/* Badge */
+.badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.badge span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .newsletter {
+    flex-direction: column;
+    text-align: center;
+  }
+  .newsletter-right {
+    margin-top: 40px;
+  }
+  .image-grid {
+    width: 300px;
+    height: 300px;
+  }
+  .image-card {
+    width: 150px;
+    height: 150px;
+  }
+}
+/* Floating Tag Badges */
+.tag-badge {
+  position: absolute;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-width: 120px;
+  text-align: center;
+  animation: float 6s infinite ease-in-out;
+
+  z-index: 5;   /* 🔥 ensures badges are on top of images */
+}
+
+.tag-badge strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #f45d22;
+}
+
+.tag-badge span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #444;
+}
+
+/* Random placements */
+.badge-top-left {
+  top: -40px;
+  left: -30px;
+}
+.badge-top-right {
+  top: 40px;
+  right: -70px;
+}
+.badge-bottom-left {
+  bottom: 50px;
+  left: 40px;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}

@@ -11,6 +11,7 @@ import WorkStrip from './components/WorkStrip';
 import Blog from './components/Blog';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQs';
+import Newsletter from './components/Newsletter';
 function App() {
   return (
    <>

@@ -9,6 +9,7 @@ import WorkStripe from "./WorkStrip";
 import Blog from "./Blog";
 import Testimonials from "./Testimonials";
 import FAQ from "./FAQs";
+import Newsletter from "./Newsletter";
 
 export default function LandingPage(){
     return(
@@ -22,6 +23,7 @@ export default function LandingPage(){
         <Blog/>
         <Testimonials/>
         <FAQ/>
+        <Newsletter/>
         <Footer/>
         </>
     );
