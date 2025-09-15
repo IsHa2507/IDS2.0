@@ -6,17 +6,16 @@ export default function HeroSection() {
   return (
     <section className="hero-section">
       <div className="hero-wrapper">
-        {/* Top Banner */}
-        <div className="top-banner">
-          <span className="tag-new">New</span>
-          <p>Check our new premium Webflow Templates Azwedo</p>
-          <FiArrowRight className="arrow-icon"/>
-        </div>
-
-        {/* Main Content */}
         <div className="hero-grid">
           {/* Left Content */}
           <div className="hero-left">
+            {/* Top Banner now inside left column */}
+            <div className="top-bannerH">
+              <span className="tag-newH">New</span>
+              <p>Check our new premium Webflow Templates Azwedo</p>
+              <FiArrowRight className="arrow-icon" />
+            </div>
+
             <h1 className="hero-title">
               Your Digital Portal <br /> to Excellence
             </h1>
@@ -30,7 +29,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-         {/* Right Content with Rings */}
+          {/* Right Content with Rings */}
           <div className="hero-right">
             <div className="rings-container">
               <div className="ring"></div>
@@ -48,7 +47,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-        
     </section>
   );
 }
